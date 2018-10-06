@@ -11,6 +11,8 @@ $(INTCHECK_LIB): $(INTCHECK_SRC) $(RTSRC)
 run: $(INTCHECK_LIB)
 	clang-3.8 -g -Xclang -load -Xclang $(INTCHECK_LIB) $(RTSRC) ./test/malloc-overflow/malloc-overflow.c 
 	./a.out 10 10
+	clang-3.8 -g -Xclang -load -Xclang $(INTCHECK_LIB) $(RTSRC) ./test/benign-overflow/benign-overflow.c 
+	./a.out 10 10
 
 clean:
 	rm -rf build
