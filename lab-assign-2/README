@@ -1,0 +1,9 @@
+Exploiting unlink bug.
+Providing two exploits (exploit_v1.sh, exploit_v2.sh)
+
+[exploit_v1.sh]
+ - Overwrite strcmp function's got by an address (in heap region) of shellcode that consists of two instructions (mov %eax, $0; ret;)
+ - Since the address space is randomized, fixing a specific base address (for heap region) and doing brute force
+
+[exploit_v2.sh]
+ - Simply overwrite the write_here variable (0x0804b888) by an address of string "jacket!"
